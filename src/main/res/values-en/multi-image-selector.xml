@@ -1,0 +1,8 @@
+<resources>
+    <string name="folder_all">All Images</string>
+    <string name="preview">Preview</string>
+    <string name="msg_no_camera">No system camera found</string>
+    <string name="msg_amount_limit">You may not select images past the limit</string>
+    <string name="save_to_phone_album">Save to Phone</string>
+    <string name="save_to_phone_success">Save Success</string>
+</resources>

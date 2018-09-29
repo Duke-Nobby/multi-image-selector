@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar_imagePick_title_bar"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:background="@android:color/black"
+    android:minHeight="?attr/actionBarSize">
+    
+    
+    <TextView
+        android:id="@+id/titleTv_imagePick_title_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:clickable="false"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textColor="@color/imageMark_titleBar_btn_color"
+        android:textSize="19dp" />
+    
+    
+    <LinearLayout
+        android:id="@+id/right_ll_imagePick_title_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginRight="10dp">
+        
+        <TextView
+            android:id="@+id/saveTv_imagePick_title_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="10dp"
+            android:text="@string/util_text_save"
+            android:textColor="@color/imageMark_titleBar_btn_color"
+            android:textSize="15dp"
+            android:visibility="gone" />
+        
+        <TextView
+            android:id="@+id/confirmTv_imagePick_title_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/util_text_confirm"
+            android:textColor="@color/imageMark_titleBar_btn_color"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+</android.support.v7.widget.Toolbar>

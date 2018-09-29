@@ -1,0 +1,8 @@
+<resources>
+    <string name="folder_all">所有圖片</string>
+    <string name="preview">預覽</string>
+    <string name="msg_no_camera">找不到系統相機</string>
+    <string name="msg_amount_limit">選擇圖片已達上限</string>
+    <string name="save_to_phone_album">保存至相册</string>
+    <string name="save_to_phone_success">保存成功</string>
+</resources>

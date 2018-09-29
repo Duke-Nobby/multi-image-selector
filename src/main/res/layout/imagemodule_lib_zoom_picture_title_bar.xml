@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    android:id="@+id/toolbar_zp_title_bar"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:background="@android:color/black"
+    android:gravity="center_vertical"
+    android:minHeight="?attr/actionBarSize">
+
+    <TextView
+        android:id="@+id/titleTv_zp_title_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:clickable="false"
+        android:ellipsize="end"
+        android:lines="1"
+        android:textColor="@android:color/white"
+        android:textSize="19dp"/>
+
+    <LinearLayout
+        android:id="@+id/right_ll_zp_title_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical">
+
+        <!--<TextView-->
+        <!--android:id="@+id/saveTv_zp_title_bar"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:padding="10dp"-->
+        <!--android:text="@string/util_text_save"-->
+        <!--android:textColor="@color/white"-->
+        <!--android:textSize="15dp"-->
+        <!--android:visibility="gone"/>-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/historyTv_zp_title_bar"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:visibility="gone"-->
+        <!--android:drawableTop="@android:drawable/ic_menu_recent_history"-->
+        <!--android:text="History"-->
+        <!--android:textColor="@android:color/white"/>-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/search_tv_zp_title_bar"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:drawableLeft="@android:drawable/ic_menu_search"-->
+        <!--android:textColor="@android:color/white"/>-->
+
+    </LinearLayout>
+
+</android.support.v7.widget.Toolbar>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="save_to_phone">บันทึกเข้ามือถือ</string>
+    <string name="save_success">บันทึกสำเร็จ</string>
+    <string name="take_photo">ถ่ายรูป</string>
+    <string name="pictures">รูปภาพ</string>
+    <string name="done">เสร็จ</string>
+    <string name="please_grant_camera_storage_first">กรุณาอนุญาตสิทธิ์ให้กล้องและแหล่งเก็บข้อมูลใน่การตั้งค่า</string>
+    <string name="redo">恢復</string>
+</resources>

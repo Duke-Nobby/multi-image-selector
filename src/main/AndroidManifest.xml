@@ -1,0 +1,30 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="me.nereo.multi_image_selector">
+    
+    <application android:allowBackup="true">
+        <activity
+            android:name="me.nereo.multi_image_selector.MultiImageSelectorActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/ImageModule" />
+        
+        <activity
+            android:name="com.cardapp.mainland.publibs.imagemodule.image_viewpager.ZoomPictureActivityMIS"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/ImageModule" />
+    
+        <activity
+            android:name="com.cardapp.mainland.publibs.imagemodule.image_viewpager.ZoomPictureTransparentActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/Theme.Transparent" />
+        
+        <!--图片剪裁库uCrop的Activity-->
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ImageModule" />
+        <activity
+            android:name="com.cardapp.utils.imageMark.view.base.ImageMarkActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ImageModule" />
+    </application>
+</manifest>

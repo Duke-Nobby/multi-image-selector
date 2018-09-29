@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="save_to_phone">保存至相冊</string>
+    <string name="save_success">保存成功</string>
+    <string name="take_photo">拍攝照片</string>
+    <string name="pictures">圖片</string>
+    <string name="done">完成</string>
+    <string name="please_grant_camera_storage_first">請到設置中打開相機和存儲空間權限</string>
+    <string name="Undo">撤回</string>
+    <string name="redo">恢復</string>
+</resources>

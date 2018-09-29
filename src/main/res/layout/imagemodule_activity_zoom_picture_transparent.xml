@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
+    <include layout="@layout/imagemodule_lib_zoom_picture_title_bar" />
+    
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+        <android.support.v4.view.ViewPager
+            android:id="@+id/multi_image_selectorLib_displayer_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#88000000" />
+        
+        <com.viewpagerindicator.CirclePageIndicator
+            android:id="@+id/zoom_picture_pager_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:padding="6dip"
+            app:fillColor="@android:color/white"
+            app:pageColor="#808080"
+            app:radius="3dp"
+            app:strokeColor="#808080"
+            app:strokeWidth="0dp" />
+        
+        <!--<com.pixelcan.inkpageindicator.InkPageIndicator-->
+        <!--android:id="@+id/zoom_picture_pager_indicator"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom"-->
+        <!--android:layout_marginBottom="20dp"-->
+        <!--android:visibility="gone"-->
+        <!--app:animationDuration="200"-->
+        <!--app:currentPageIndicatorColor="@android:color/white"-->
+        <!--app:dotDiameter="10dp"-->
+        <!--app:dotGap="4dp"-->
+        <!--app:pageIndicatorColor="@android:color/darker_gray"/>-->
+    
+    </FrameLayout>
+
+
+</LinearLayout>

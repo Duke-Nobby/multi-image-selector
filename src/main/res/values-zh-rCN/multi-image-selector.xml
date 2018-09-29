@@ -1,0 +1,10 @@
+<resources>
+    <!--<string name="app_name">多图选择器</string>-->
+    <string name="folder_all">所有照片</string>
+    <string name="preview">预览</string>
+    <string name="msg_no_camera">找不到系统相机</string>
+    <string name="msg_amount_limit">选择图片已达上限</string>
+    <string name="save_to_phone_album">保存至相册</string>
+    <string name="save_to_phone_success">保存成功</string>
+
+</resources>

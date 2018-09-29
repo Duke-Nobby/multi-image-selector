@@ -1,0 +1,114 @@
+apply plugin: 'com.android.library'
+
+//爲Project加ext屬性進行引用
+def globalConfiguration = rootProject.extensions.getByName("ext")
+
+android {
+    compileSdkVersion globalConfiguration.getAt("androidCompileSdkVersion")
+    buildToolsVersion globalConfiguration.getAt("androidBuildToolsVersion")
+
+    defaultConfig {
+        minSdkVersion globalConfiguration.getAt("androidMinSdkVersion")
+        targetSdkVersion globalConfiguration.getAt("androidTargetSdkVersion")
+        versionCode 1
+//        versionName "1.0.7"
+        versionName "1.0.8-SNAPSHOT"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+/*此处配置gradle编译时，标记了changing=true的dependencies都会在一段时间后（0 seconds即立刻）重新下载更新相应依赖在本地的缓存*/
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+dependencies {
+    def cardappDependencies = rootProject.ext.cardappDependencies
+//    compile cardappDependencies.cardappUtils
+    compile("com.cardapp.utils:cardappUtils:1.0.18-SNAPSHOT") {
+        changing = true
+    }
+    def commonDependencies = rootProject.ext.commonDependencies
+    compile commonDependencies.recyclerView
+    compile commonDependencies.cardviewV7
+    compile commonDependencies.appcompatV7
+    compile commonDependencies.jodaTime
+    //butterKnife
+    compile commonDependencies.butterknife
+    //页面结果响应式处理库
+    compile commonDependencies.rxActivityResult
+
+//    compile 'com.squareup.picasso:picasso:2.4.0'
+//    compile 'com.squareup.okhttp:okhttp-urlconnection:2.4.0'
+//    compile 'com.facebook.fresco:fresco:0.9.0+'
+//    compile 'com.facebook.fresco:imagepipeline:0.9.0+'
+//    compile 'com.facebook.fresco:imagepipeline-okhttp:0.9.0'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.4'
+    /*图片剪裁库uCrop*/
+    compile 'com.yalantis:ucrop:1.3.2'
+    compile 'com.cardapp.utils:git_cropImageView_library:1.0.0'
+    // Mosby
+    compile 'com.hannesdorfmann.mosby:mvp:2.0.0'
+    /* 第三方 ViewPagerIndicator 库 */
+    compile 'com.pacioianu.david:ink-page-indicator:1.2.0'
+
+    /* 友盟数据统计 */
+    compile 'com.umeng.analytics:analytics:latest.integration'
+}
+
+/*脚本：公库上传到内网服务器maven仓库*/
+apply plugin: 'maven'
+
+afterEvaluate { project ->
+
+    uploadArchives {
+        configuration = configurations.archives
+        repositories.mavenDeployer {
+//            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+            repository(url: RELEASE_REPOSITORY_URL) {
+                authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
+            }
+            snapshotRepository(url: SNAPSHOT_REPOSITORY_URL) {
+                authentication(userName: getRepositoryUsername(), password: getRepositoryPassword())
+            }
+            pom.project {
+                name POM_ARTIFACT_ID
+                packaging 'aar'
+                description DESCRIPTION
+//                url 'http://127.0.0.1:8081/nexus/content/repositories/juude-id/'//仓库地址
+                groupId GROUP
+                artifactId POM_ARTIFACT_ID //LibA
+                version android.defaultConfig.versionName
+            }
+        }
+    }
+    /**
+     * 上传源码文件到库源
+     */
+    task androidSourcesJar(type: Jar) {
+        classifier = 'sources'
+        from android.sourceSets.main.java.sourceFiles
+    }
+    artifacts {
+        //上传源码文件到库源
+        archives androidSourcesJar
+    }
+}
+
+def isReleaseBuild() {
+    return VERSION_NAME.contains("SNAPSHOT") == false
+}
+
+def getRepositoryUsername() {
+    return hasProperty('NEXUS_USERNAME') ? NEXUS_USERNAME : ""
+}
+
+def getRepositoryPassword() {
+    return hasProperty('NEXUS_PASSWORD') ? NEXUS_PASSWORD : ""
+}

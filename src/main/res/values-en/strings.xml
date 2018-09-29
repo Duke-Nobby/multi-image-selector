@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="save_to_phone">Save to Phone</string>
+    <string name="save_success">Save success</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="pictures">Images</string>
+    <string name="done">Done</string>
+    <string name="please_grant_camera_storage_first">Please grant the camera and storage permissions in the setting.</string>
+    <string name="Undo">Undo</string>
+    <string name="redo">Redo</string>
+</resources>

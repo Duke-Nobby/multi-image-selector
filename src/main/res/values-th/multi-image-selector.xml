@@ -1,0 +1,8 @@
+<resources>
+    <string name="folder_all">รวมภาพ</string>
+    <string name="preview">ภาพตัวอย่าง</string>
+    <string name="msg_no_camera">ไม่สามารถหากล้องได้</string>
+    <string name="msg_amount_limit">ไม่สามารถเลือกรูปเกินจำกัด</string>
+    <string name="save_to_phone_album">บันทึกเข้ามือถือ</string>
+    <string name="save_to_phone_success">บันทึกสำเร็จ</string>
+</resources>
